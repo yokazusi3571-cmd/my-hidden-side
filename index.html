@@ -1,173 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>My Hidden Side 体験版：鏡のほころび</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>My Hidden Side - 体験版</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
-    <header class="topbar">
-      <div class="topbar-title">My Hidden Side</div>
-      <div class="topbar-sub">体験版：鏡のほころび</div>
-    </header>
 
-    <main class="main">
-      <!-- Scene 0: 鏡の前（タイトル） -->
-      <section id="scene-intro" class="scene active">
-        <div class="scene-inner">
-          <p class="scene-label">prologue</p>
-          <h1 class="scene-title">静かな部屋に、ひとつだけ鏡が浮かんでいる。</h1>
-          <p class="scene-text">
-            それは、姿を映すためというより、<br />
-            まだ言葉になっていない気持ちに触れるための鏡らしい。
-          </p>
+<div class="container">
 
-          <div class="mirror-wrapper">
-            <button id="magic-mirror" class="magic-mirror" aria-label="魔法の鏡に触れる">
-              <span class="mirror-core"></span>
-              <span class="mirror-glow"></span>
-              <span class="mirror-crack crack-1"></span>
-              <span class="mirror-crack crack-2"></span>
-              <span class="mirror-crack crack-3"></span>
-            </button>
-          </div>
+    <!-- タイトル -->
+    <h1 class="title">MY HIDDEN SIDE</h1>
 
-          <p class="hint">ゆっくり息をするように光る鏡に、そっと触れてみる。</p>
+    <!-- メニュー -->
+    <div class="menu">
+        <button class="menu-btn" onclick="alert('準備中です')">意見を書き込む</button>
+        <button class="menu-btn" onclick="alert('準備中です')">考えを記録する</button>
+        <button class="menu-btn" onclick="alert('準備中です')">思考のヒント</button>
+        <button class="menu-btn" onclick="alert('準備中です')">知識を学ぶ</button>
+    </div>
 
-          <div class="controls">
-            <button class="btn primary" id="btn-start">鏡に触れる</button>
-          </div>
-        </div>
-      </section>
+    <!-- 説明文 -->
+    <div class="description">
+        整理した考えや気づき<br>
+        自分の意見<br>
+        記録しておける居場所<br>
+        新たな考え・知識として学べること
+    </div>
 
-      <!-- Scene A: ノベル＋選択肢 -->
-      <section id="scene-a" class="scene">
-        <div class="scene-inner">
-          <p class="scene-label">chapter A</p>
-          <h2 class="scene-title">問いは、いつも日常の中にいる。</h2>
-          <p class="scene-text">
-            鏡の向こうから、誰かの声が聞こえる。<br />
-            「ここでは、正しさを探さなくていいよ」<br /><br />
-            「いまのあなたにとって、大事そうなことから話してみない？」
-          </p>
+</div>
 
-          <div class="choice-group">
-            <p class="choice-label">いま、いちばん近いと感じるのは…</p>
-            <div class="choice-buttons">
-              <button class="btn choice" data-choice="body">
-                自分の身体や見た目のこと
-              </button>
-              <button class="btn choice" data-choice="relation">
-                人との関係や距離感のこと
-              </button>
-              <button class="btn choice" data-choice="words">
-                言葉にしにくいモヤモヤ
-              </button>
-            </div>
-          </div>
-
-          <p id="choice-reflection" class="reflection-text">
-            （どれを選んでも、「間違い」にはならない。）
-          </p>
-
-          <div class="controls">
-            <button class="btn" id="btn-back-a">戻る</button>
-            <button class="btn primary" id="btn-to-b" disabled>次へ進む</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Scene B: 内省ダイアログ -->
-      <section id="scene-b" class="scene">
-        <div class="scene-inner">
-          <p class="scene-label">chapter B</p>
-          <h2 class="scene-title">ことばにしてみる練習。</h2>
-          <p class="scene-text">
-            鏡の奥から、もう一度声がする。<br />
-            「上手にまとめなくて大丈夫。<br />
-            途切れ途切れでも、短くても、そのままで。」<br /><br />
-            いま浮かんでいることを、すこしだけ書いてみる。
-          </p>
-
-          <label for="input-thought" class="textarea-label">
-            いま、鏡にそっと渡してみたいこと
-          </label>
-          <textarea id="input-thought" class="textarea" rows="4" placeholder="一文でも、単語だけでも大丈夫。"></textarea>
-
-          <div class="controls">
-            <button class="btn" id="btn-back-b">戻る</button>
-            <button class="btn primary" id="btn-send-thought">鏡にことばを投げる</button>
-          </div>
-
-          <div id="mirror-response" class="response-card" aria-live="polite"></div>
-
-          <div class="controls secondary-controls">
-            <button class="btn ghost" id="btn-to-c">光の向こうへ進む</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Scene C: 光の人影パート -->
-      <section id="scene-c" class="scene">
-        <div class="scene-inner">
-          <p class="scene-label">chapter C</p>
-          <h2 class="scene-title">もうひとりの「わたし」の輪郭。</h2>
-
-          <div class="figure-wrapper">
-            <div class="light-figure">
-              <div class="figure-core"></div>
-            </div>
-          </div>
-
-          <p class="scene-text">
-            光でできた人影が、あなたの言葉を静かに受け取っている。<br /><br />
-            「ここで話したことは、<br />
-            すべて“途中”のままでいていい。」<br /><br />
-            「あなたのペースで、<br />
-            少しずつ形が変わっていくものだから。」
-          </p>
-
-          <div class="controls">
-            <button class="btn" id="btn-back-c">戻る</button>
-            <button class="btn primary" id="btn-to-d">鏡の問いを受け取る</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Scene D: 鏡の問い -->
-      <section id="scene-d" class="scene">
-        <div class="scene-inner">
-          <p class="scene-label">chapter D</p>
-          <h2 class="scene-title">鏡からの、小さな問い。</h2>
-
-          <div class="question-card">
-            <p id="mirror-question" class="question-text">
-              …
-            </p>
-          </div>
-
-          <p class="scene-text small">
-            すぐに答えを出さなくてもいい。<br />
-            なんとなく心に置いておくだけでも、かたちになっていく。
-          </p>
-
-          <div class="controls">
-            <button class="btn" id="btn-new-question">もう一度、別の問いを聞く</button>
-            <button class="btn primary" id="btn-restart">最初の鏡に戻る</button>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <span>My Hidden Side – demo</span>
-      <span class="dot">•</span>
-      <span>「隠れた私へ」触れるための、ゲーム風体験版</span>
-    </footer>
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
