@@ -1,6 +1,6 @@
-// 必要になったらここに機能を追加
 console.log("My Hidden Side Loaded");
-// モーダル開閉
+
+// ✨ モーダル開閉
 const modalOverlay = document.getElementById("modalOverlay");
 
 document.getElementById("openModal").onclick = () => {
@@ -11,8 +11,7 @@ document.getElementById("closeModal").onclick = () => {
     modalOverlay.style.display = "none";
 };
 
-
-// 送信処理
+// ✨ 送信処理
 document.getElementById("sendBtn").onclick = () => {
     const text = document.getElementById("userInput").value.trim();
     const responseBox = document.getElementById("responseBox");
