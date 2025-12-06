@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>My Hidden Side - 体験版</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Hidden Side</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="container">
+<!-- タイトル -->
+<h1 class="title">MY HIDDEN SIDE</h1>
 
-    <!-- タイトル -->
-    <h1 class="title">MY HIDDEN SIDE</h1>
-
-    <!-- メニュー -->
-    <div class="menu">
-        <button class="menu-btn" onclick="alert('準備中です')">意見を書き込む</button>
-        <button class="menu-btn" onclick="alert('準備中です')">考えを記録する</button>
-        <button class="menu-btn" onclick="alert('準備中です')">思考のヒント</button>
-        <button class="menu-btn" onclick="alert('準備中です')">知識を学ぶ</button>
-    </div>
-
-    <!-- 説明文 -->
-    <div class="description">
-        整理した考えや気づき<br>
-        自分の意見<br>
-        記録しておける居場所<br>
-        新たな考え・知識として学べること
-    </div>
-
+<!-- メニュー -->
+<div class="menu">
+    <button class="menu-btn" id="openModal">意見を書き込む</button>
+    <button class="menu-btn" onclick="alert('準備中です')">考えを記録する</button>
+    <button class="menu-btn" onclick="alert('準備中です')">思考のヒント</button>
+    <button class="menu-btn" onclick="alert('準備中です')">知識を学ぶ</button>
 </div>
-<button class="menu-btn" id="openModal">意見を書き込む</button>
+
+<!-- 説明文 -->
+<div class="description">
+    整理した考えや気づき<br>
+    自分の意見<br>
+    記録しておける居場所<br>
+    新たな考え・知識として学べること
+</div>
 
 <!-- ✨ 意見モーダル -->
 <div id="modalOverlay" class="modal-overlay">
@@ -49,6 +43,7 @@
         </div>
     </div>
 </div>
-<script src="script.js"></script>    
+
+<script src="script.js"></script>
 </body>
 </html>
