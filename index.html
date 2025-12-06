@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- ✨ 意見モーダル -->
+<div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+        <button class="close-btn" id="closeModal">×</button>
+
+        <h2>📝 意見を書き込む</h2>
+
+        <textarea id="userInput" placeholder="ここに自由に書いてください"></textarea>
+
+        <button id="sendBtn" class="send-btn">送信</button>
+
+        <div id="responseBox" class="response-box" style="display:none;">
+            <p id="responseText"></p>
+        </div>
+    </div>
+</div>
 <body>
 
 <div class="container">
