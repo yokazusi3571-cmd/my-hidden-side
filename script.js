@@ -2,6 +2,7 @@
 console.log("My Hidden Side Loaded");
 // モーダル開閉
 const modalOverlay = document.getElementById("modalOverlay");
+
 document.getElementById("openModal").onclick = () => {
     modalOverlay.style.display = "flex";
 };
