@@ -10,6 +10,7 @@ document.getElementById("closeModal").onclick = () => {
     modalOverlay.style.display = "none";
 };
 
+
 // 送信処理
 document.getElementById("sendBtn").onclick = () => {
     const text = document.getElementById("userInput").value.trim();
